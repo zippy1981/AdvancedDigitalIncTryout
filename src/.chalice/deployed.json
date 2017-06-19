@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "api_handler_name": "src-dev",
+    "api_handler_arn": "arn:aws:lambda:us-east-1:402392417422:function:src-dev",
+    "rest_api_id": "2h4vax0hob",
+    "region": "us-east-1",
+    "api_gateway_stage": "dev",
+    "backend": "api",
+    "chalice_version": "0.9.0"
+  }
+}
