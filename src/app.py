@@ -1,6 +1,5 @@
 import boto3
 from chalice import Chalice, BadRequestError
-import configparser
 import imghdr
 from ipaddress import ip_address
 from png import png
@@ -8,9 +7,6 @@ import os
 from time import localtime, time
 import urllib.request
 import uuid
-
-config = configparser.ConfigParser()
-config.read ("{0}\app.ini".format(os.path.dirname(__file__)))
 
 BUCKET = 'zippy1981'
 PNG_MIME_TYPE = 'image/png'
@@ -146,7 +142,7 @@ def push_png(max_scale_dimension=100):
     )
 
     dimensions = get_png_dimensions(request.raw_body)
-    scaled_dimensions = scale_dimensions(dimensions, max_scale_dimension)
+    scaled_dimensions = scale_dimensions(dimensions, int(max_scale_dimension))
     html = generate_template(png_file, scaled_dimensions)
     S3.put_object(
         Bucket=BUCKET,

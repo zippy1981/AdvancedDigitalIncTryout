@@ -4,6 +4,16 @@
     {
       "Effect": "Allow",
       "Action": [
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Sid": "1e06558122094284a4f31d1daa273ac6"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:PutLogEvents"
